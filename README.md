@@ -42,7 +42,7 @@
     az appservice plan create --name <app service plan> --resource-group <resource group name>
     az webapp create --name <web app name> --plan <app service plan> --resource-group <resource group name>
     ```
-  **注意：** 将<app service plan>替换为自己命名的宿主计划，将<resource group name>替换为自己命名的资源组。将<web app name>替换为自己命名的应用程序名字。
+    **注意：** 将<app service plan>替换为自己命名的宿主计划，将<resource group name>替换为自己命名的资源组。将<web app name>替换为自己命名的应用程序名字。
 1. 导出Storage Account的Connection String并配置到App Service中，注意替换为你自己的Storage Account和App Service的名字。
     ```
     CONNECTIONSTRING=$(az storage account show-connection-string --name <storage account name> --output tsv)
@@ -56,4 +56,4 @@
     az webapp deployment source config-zip --src ../site.zip --name <web app name> --resource-group <resource group name>
     ```
  1. 在网站中打开刚刚发布的网站，验证文件上传，获取文件列表和下载文件的功能。
-    [https://[web app name>.azurewebsites.net/](https://<web app name>.azurewebsites.net/)
+    [https://&lt;web app name&gt;.azurewebsites.net/]()
