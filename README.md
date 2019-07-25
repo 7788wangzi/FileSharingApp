@@ -27,7 +27,7 @@
     ```
     az group create --name <resource group name> --location eastasia
     ```    
-    **注意：** 将<resource group name>替换为自己命名的资源组。
+    **注意：** 将&lt;resource group name&gt;替换为自己命名的资源组。
 1. 创建**storage account**，使用刚刚创建的资源组:
     ```
     az storage account create \
@@ -36,13 +36,13 @@
     --location eastasia \
     --name <storage account name>
     ```
-    **注意：** 将<resource group name>替换为自己命名的资源组, 将<storage account name>替换为自己命名的Storage Account。Storage Account的名字，全球唯一。
+    **注意：** 将&lt;resource group name&gt;替换为自己命名的资源组, 将&lt;storage account name&gt;替换为自己命名的Storage Account。Storage Account的名字，全球唯一。
 1. 创建**App Service**, 使用刚刚创建的资源组：
     ```
     az appservice plan create --name <app service plan> --resource-group <resource group name>
     az webapp create --name <web app name> --plan <app service plan> --resource-group <resource group name>
     ```
-    **注意：** 将<app service plan>替换为自己命名的宿主计划，将<resource group name>替换为自己命名的资源组。将<web app name>替换为自己命名的应用程序名字。
+    **注意：** 将&lt;app service plan&gt;替换为自己命名的宿主计划，将&lt;resource group name&gt;替换为自己命名的资源组。将&lt;web app name&gt;替换为自己命名的应用程序名字。
 1. 导出Storage Account的Connection String并配置到App Service中，注意替换为你自己的Storage Account和App Service的名字。
     ```
     CONNECTIONSTRING=$(az storage account show-connection-string --name <storage account name> --output tsv)
