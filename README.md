@@ -12,37 +12,48 @@
 1. 打开Cloud Shell，选择Cloud Shell - Bash。
 1. 下载源码。
     ```
-    
+    git clone https://github.com/7788wangzi/FileSharingApp.git
     ```
-1. 添加引用的包。
-  ```
-  dotnet add package WindowsAzure.Storage
-  dotnet restore
-  ```
-1. 创建**storage account**，以Azure CLI为例:
-  ```
-  az storage account create \
-  --kind StorageV2 \
-  --resource-group Learn-16951c9a-b156-4ae2-8630-57241b4e1cd6 \
-  --location eastasia \
-  --name storage072406
-  ```
-  **NOTE:** storage072406是Storage Account的名字，全球唯一，需要替换为你自己的Storage Account的名字。
-1. 创建**App Service**, 以Azure CLI为例：
-  ```
-  az appservice plan create --name blob-exercise-plan --resource-group Learn-16951c9a-b156-4ae2-8630-57241b4e1cd6
-  az webapp create --name FileSharingApp --plan blob-exercise-plan --resource-group Learn-16951c9a-b156-4ae2-8630-57241b4e1cd6
-  ```
-  **NOTE:** FileSharingApp是App Service的名字，全球唯一，需要替换为你自己的App Service的名字。
+1. 切换到FileSharingApp/src目录。
+    ```
+    cd FileSharingApp/src
+    ```
+ 1. 添加引用的包WindowsAzure.Storeage,并使用命令`dotnet restore`获取最新版本。
+    ```
+    dotnet add package WindowsAzure.Storage
+    dotnet restore
+    ```
+1. 创建资源组，并记录该资源组的名字。
+    ```
+    az group create --name <resource group name> --location eastasia
+    ```    
+    **注意：** 将<resource group name>替换为自己命名的资源组。
+1. 创建**storage account**，使用刚刚创建的资源组:
+    ```
+    az storage account create \
+    --kind StorageV2 \
+    --resource-group <resource group name> \
+    --location eastasia \
+    --name <storage account name>
+    ```
+    **注意：** 将<resource group name>替换为自己命名的资源组, 将<storage account name>替换为自己命名的Storage Account。Storage Account的名字，全球唯一。
+1. 创建**App Service**, 使用刚刚创建的资源组：
+    ```
+    az appservice plan create --name <app service plan> --resource-group <resource group name>
+    az webapp create --name <web app name> --plan <app service plan> --resource-group <resource group name>
+    ```
+  **注意：** 将<app service plan>替换为自己命名的宿主计划，将<resource group name>替换为自己命名的资源组。将<web app name>替换为自己命名的应用程序名字。
 1. 导出Storage Account的Connection String并配置到App Service中，注意替换为你自己的Storage Account和App Service的名字。
-  ```
-  CONNECTIONSTRING=$(az storage account show-connection-string --name storage072406 --output tsv)
-  az webapp config appsettings set --name FileSharingApp --resource-group Learn-16951c9a-b156-4ae2-8630-57241b4e1cd6 --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
-  ```
-1. 发布网站，部署到Azure中，以Azure CLI为例：
-  ```
-  dotnet publish -o pub
-  cd pub
-  zip -r ../site.zip *
-  az webapp deployment source config-zip --src ../site.zip --name FileSharingApp --resource-group Learn-16951c9a-b156-4ae2-8630-57241b4e1cd6
-  ```
+    ```
+    CONNECTIONSTRING=$(az storage account show-connection-string --name <storage account name> --output tsv)
+    az webapp config appsettings set --name <web app name> --resource-group <resource group name> --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
+    ```
+1. 发布网站，部署到Azure中，注意替换为你自己的资源组名字和应用程序名字：
+    ```
+    dotnet publish -o pub
+    cd pub
+    zip -r ../site.zip *
+    az webapp deployment source config-zip --src ../site.zip --name <web app name> --resource-group <resource group name>
+    ```
+ 1. 在网站中打开刚刚发布的网站，验证文件上传，获取文件列表和下载文件的功能。
+    [https://[web app name>.azurewebsites.net/](https://<web app name>.azurewebsites.net/)
