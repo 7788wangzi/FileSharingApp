@@ -1,0 +1,11 @@
+D:\CodeLibrary\2020\FileSharingApp\src\bin\Debug\netcoreapp2.0\FileUploader.deps.json
+D:\CodeLibrary\2020\FileSharingApp\src\bin\Debug\netcoreapp2.0\FileUploader.runtimeconfig.json
+D:\CodeLibrary\2020\FileSharingApp\src\bin\Debug\netcoreapp2.0\FileUploader.runtimeconfig.dev.json
+D:\CodeLibrary\2020\FileSharingApp\src\bin\Debug\netcoreapp2.0\FileUploader.dll
+D:\CodeLibrary\2020\FileSharingApp\src\bin\Debug\netcoreapp2.0\FileUploader.pdb
+D:\CodeLibrary\2020\FileSharingApp\src\obj\Debug\netcoreapp2.0\FileUploader.csprojAssemblyReference.cache
+D:\CodeLibrary\2020\FileSharingApp\src\obj\Debug\netcoreapp2.0\FileUploader.csproj.CoreCompileInputs.cache
+D:\CodeLibrary\2020\FileSharingApp\src\obj\Debug\netcoreapp2.0\FileUploader.AssemblyInfoInputs.cache
+D:\CodeLibrary\2020\FileSharingApp\src\obj\Debug\netcoreapp2.0\FileUploader.AssemblyInfo.cs
+D:\CodeLibrary\2020\FileSharingApp\src\obj\Debug\netcoreapp2.0\FileUploader.dll
+D:\CodeLibrary\2020\FileSharingApp\src\obj\Debug\netcoreapp2.0\FileUploader.pdb
