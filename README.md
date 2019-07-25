@@ -6,9 +6,14 @@
 
 ![网站截图](media/FileSharingApp.PNG)
 
-完成以下配置，部署网站到自己的Azure订阅中。
+执行以下配置步骤，将网站部署到自己的Azure订阅中。
 
+1. 登录Azure Portal。
+1. 打开Cloud Shell，选择Cloud Shell - Bash。
 1. 下载源码。
+    ```
+    
+    ```
 1. 添加引用的包。
   ```
   dotnet add package WindowsAzure.Storage
