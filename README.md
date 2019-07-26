@@ -6,6 +6,7 @@
 
 ![网站截图](media/FileSharingApp.PNG)
 
+## 部署到Azure中
 执行以下配置步骤，将网站部署到自己的Azure订阅中。
 
 1. 登录Azure Portal。
