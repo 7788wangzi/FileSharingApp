@@ -1,9 +1,0 @@
-D:\CodeLibrary\2020\FileSharingApp\src
---output-path=obj\Debug\netcoreapp2.0\
---application-name=FileUploader
---content-root=D:\CodeLibrary\2020\FileSharingApp\src
---file=D:\CodeLibrary\2020\FileSharingApp\src\Views\Home\Index.cshtml
---file=D:\CodeLibrary\2020\FileSharingApp\src\Views\Shared\Error.cshtml
---file=D:\CodeLibrary\2020\FileSharingApp\src\Views\Shared\_Layout.cshtml
---file=D:\CodeLibrary\2020\FileSharingApp\src\Views\_ViewImports.cshtml
---file=D:\CodeLibrary\2020\FileSharingApp\src\Views\_ViewStart.cshtml
